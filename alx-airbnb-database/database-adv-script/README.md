@@ -1,5 +1,8 @@
 # Task 0: Write Complex Queries with Joins
 
+# Task 0: Write Complex Queries with Joins
+
+This file contains SQL queries that demonstrate INNER JOIN, LEFT JOIN, and FULL OUTER JOIN (via UNION workaround) on the Airbnb database schema.
 This task involves writing SQL queries using different types of joins to extract data from the Airbnb database schema.
 
 ## Queries Included:
