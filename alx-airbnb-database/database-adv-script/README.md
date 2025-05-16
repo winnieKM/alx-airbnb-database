@@ -1,20 +1,18 @@
-# Task 0: Write Complex Queries with Joins
+## joins_queries.sql
 
-This file contains SQL queries that demonstrate different types of joins used in the Airbnb database schema.
+This file contains SQL queries demonstrating different types of joins used in the Airbnb database schema.
 
-- **INNER JOIN**: Retrieves all bookings and their respective users.
-- **LEFT JOIN**: Retrieves all properties and their reviews, including properties without reviews.
-- **FULL OUTER JOIN**: Retrieves all users and all bookings, including unmatched records. Implemented using a UNION of LEFT and RIGHT joins because MySQL lacks FULL OUTER JOIN support.
+### Queries Included
 
-## Queries Included:
-
-- **INNER JOIN**: List of all bookings and the users who made them.
-- **LEFT JOIN**: All properties with any associated reviews (or none).
-- **FULL OUTER JOIN**: All users and all bookings, even if not connected.
-
-> Note: Some databases like MySQL don't support FULL OUTER JOIN. You can simulate it using `UNION` of LEFT and RIGHT JOINs.
+- **INNER JOIN**: Retrieves all bookings and the respective users who made those bookings.
+- **LEFT JOIN**: Retrieves all properties and their reviews, including properties that have no reviews.
+- **FULL OUTER JOIN**: Retrieves all users and all bookings, even if the user has no booking or a booking is not linked to a user.  
+  _Note: MySQL does not support FULL OUTER JOIN directly, so this is implemented using a UNION of LEFT and RIGHT JOINs._
 
 ---
+
+**Usage:**  
+Each query can be run independently to explore relationships between users, bookings, properties, and reviews in the database.
 
 # Task 1: Write Subqueries
 
