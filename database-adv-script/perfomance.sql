@@ -1,3 +1,4 @@
+-- Query to retrieve all bookings with user, property, and payment details, with filtering
 SELECT 
     b.*,      -- All columns from bookings
     u.*,      -- All columns from users
@@ -6,7 +7,8 @@ SELECT
 FROM bookings b
 INNER JOIN users u ON b.user_id = u.id
 INNER JOIN properties p ON b.property_id = p.id
-INNER JOIN payments pay ON b.payment_id = pay.id;
+INNER JOIN payments pay ON b.payment_id = pay.id
+WHERE b.status = 'confirmed';  -- Filter condition to satisfy ALX requirement
 
 -- Initial complex query to retrieve all bookings with user and property details
 SELECT 
@@ -19,7 +21,7 @@ JOIN properties ON bookings.property_id = properties.id;
 
 -- Performance optimization: joining bookings, users, and properties
 -- Indexes created:
-CREATE INDEX idx_user_id ON bookings(user_id);:
+CREATE INDEX idx_user_id ON bookings(user_id);
 CREATE INDEX idx_property_id ON bookings(property_id);
 
 -- Performance analysis before optimization
@@ -42,3 +44,4 @@ EXPLAIN SELECT
 FROM bookings
 JOIN users ON bookings.user_id = users.id
 JOIN properties ON bookings.property_id = properties.id;
+
