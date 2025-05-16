@@ -3,10 +3,12 @@ SELECT booking.*, user.*
 FROM booking
 INNER JOIN user ON booking.user_id = user.id;
 
--- LEFT JOIN: All properties and their reviews (even if there are no reviews)
+-- LEFT JOIN: Retrieve all properties and their reviews, including properties that have no reviews
 SELECT property.*, review.*
 FROM property
-LEFT JOIN review ON property.id = review.property_id;
+LEFT JOIN review ON property.id = review.property_id
+ORDER BY property.id;
+
 
 
 -- FULL OUTER JOIN example using UNION for MySQL
