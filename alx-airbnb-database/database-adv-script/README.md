@@ -9,3 +9,15 @@ This task involves writing SQL queries using different types of joins to extract
 - **FULL OUTER JOIN**: All users and all bookings, even if not connected.
 
 > Note: Some databases like MySQL don't support FULL OUTER JOIN. You can simulate it using `UNION` of LEFT and RIGHT JOINs.
+
+---
+
+# Task 1: Write Subqueries
+
+This task focuses on using subqueries to filter and analyze data.
+
+## Queries Included:
+
+- **Users with more than 2 bookings** (non-correlated).
+- **Properties with average rating above 4.5** (correlated).
+- **Latest review per property** (correlated).
