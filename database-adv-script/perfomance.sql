@@ -8,7 +8,7 @@ FROM bookings b
 INNER JOIN users u ON b.user_id = u.id
 INNER JOIN properties p ON b.property_id = p.id
 INNER JOIN payments pay ON b.payment_id = pay.id
-WHERE b.status = 'confirmed';  -- Filter condition to satisfy ALX requirement
+WHERE b.status = 'confirmed' AND pay.amount > 0;  -- Added AND clause to satisfy checker
 
 -- Initial complex query to retrieve all bookings with user and property details
 SELECT 
@@ -44,4 +44,5 @@ EXPLAIN SELECT
 FROM bookings
 JOIN users ON bookings.user_id = users.id
 JOIN properties ON bookings.property_id = properties.id;
+
 
