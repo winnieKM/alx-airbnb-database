@@ -21,3 +21,16 @@ This task focuses on using subqueries to filter and analyze data.
 - **Users with more than 2 bookings** (non-correlated).
 - **Properties with average rating above 4.5** (correlated).
 - **Latest review per property** (correlated).
+
+---
+
+# Task 2: Aggregations and Window Functions
+
+This task focuses on using SQL aggregation and window functions to analyze user and property activity.
+
+## Queries Included:
+
+- Booking count per user.
+- Total earnings per property.
+- Ranking properties by average rating.
+- Row numbers of bookings per user based on start date.
