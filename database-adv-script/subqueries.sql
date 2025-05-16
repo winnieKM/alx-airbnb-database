@@ -25,3 +25,20 @@ WHERE r1.created_at = (
   FROM reviews r2
   WHERE r2.property_id = r1.property_id
 );
+-- Find all properties where the average rating is greater than 4.0
+SELECT *
+FROM property
+WHERE id IN (
+    SELECT property_id
+    FROM review
+    GROUP BY property_id
+    HAVING AVG(rating) > 4.0
+);
+-- Find users who have made more than 3 bookings
+SELECT *
+FROM user u
+WHERE (
+    SELECT COUNT(*)
+    FROM booking b
+    WHERE b.user_id = u.id
+) > 3;
