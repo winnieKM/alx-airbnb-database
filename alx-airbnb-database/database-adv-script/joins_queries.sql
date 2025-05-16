@@ -9,7 +9,7 @@ FROM properties p
 LEFT JOIN reviews r ON p.id = r.property_id;
 
 -- FULL OUTER JOIN: Retrieve all users and all bookings (including unmatched ones)
--- Since MySQL doesn't support FULL OUTER JOIN, use UNION of LEFT JOIN and RIGHT JOIN
+-- Using UNION of LEFT JOIN and RIGHT JOIN because FULL OUTER JOIN is not supported in MySQL
 SELECT u.id AS user_id, b.id AS booking_id, u.name, b.start_date, b.end_date
 FROM users u
 LEFT JOIN bookings b ON u.id = b.user_id
@@ -19,6 +19,7 @@ UNION
 SELECT u.id AS user_id, b.id AS booking_id, u.name, b.start_date, b.end_date
 FROM users u
 RIGHT JOIN bookings b ON u.id = b.user_id;
+
 
 
 
